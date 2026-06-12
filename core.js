@@ -618,5 +618,27 @@ function TransSubTextNode(node) {
 
 !function() {
     rebuildIndices();
-    console.log("汉化模块已加载 (调试模式 - 不操作DOM)");
+    console.log("汉化模块已加载 - 等待游戏就绪后汉化");
+    
+    // 每 500ms 检测游戏是否初始化完成，就绪后执行一次静态扫描
+    var attempts = 0;
+    var check = setInterval(function() {
+        attempts++;
+        var ready = false;
+        try {
+            var inv = document.getElementById('inventory');
+            if (inv && inv.children.length > 0) ready = true;
+            if (!ready) {
+                var bd = document.getElementById('blockDisplay');
+                if (bd && bd.style.display === 'flex') ready = true;
+            }
+        } catch(e) {}
+        
+        if (ready || attempts > 60) {
+            clearInterval(check);
+            TransSubTextNode(document.body);
+            transTaskMgr.doTask();
+            console.log("汉化扫描完成 (尝试次数: " + attempts + ")");
+        }
+    }, 500);
 }();
