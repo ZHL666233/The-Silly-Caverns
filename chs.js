@@ -134,7 +134,7 @@ var cnItems = {
     "Current Message: N/A": "当前信息：无","Current Message: Ore Spawn": "当前信息：矿石生成",
     "Current Message: Event Message": "当前信息：事件信息","Current Message: ?????": "当前信息：？？？？？",
     "All Messages Appear Here!": "所有信息显示在这里！",
-    "MINED: FALSE": "已挖：否","MINED: TRUE": "已挖：是",
+    "MINED: FALSE": "已挖：否","MINED: TRUE": "已挖：是","MINED: VOIDED": "已挖：作废",
     "Powerups": "强化","Allow Auto?": "允许自动？",
     "Name!": "名称！","Activate!": "激活！","Not Active!": "未激活！","Not Active": "未激活",
     "Event Manager!": "事件管理器！","Replace Event!": "替换事件！",
