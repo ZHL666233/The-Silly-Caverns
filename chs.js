@@ -855,6 +855,8 @@ var cnItems = {
     "{{0}}x Boost, {{1}} Duration": "{{0}}x 增强，{{1}} 时长",
     "Guaranteed {{0}}x With Simulated.": "模拟后保证 {{0}}x。",
     "{{0}}/08:00:00": "{{0}}/08:00:00",
+    "1/{{0}} With Luck": "1/{{0}} 幸运修正",
+    "1/{{0}} With Simulated.": "1/{{0}} 模拟后",
 
     // ======================== 事件消息 ========================
     "The tides in the 🌊 drop out into the ocean, lowering a path into the depth...": "🌊 中的潮水退入海洋，降下一条通往深处的道路……",
@@ -1428,8 +1430,6 @@ var cnExcludeWhole = [
     /^[\d.]+[kMBTq]$/,
     // 排除 Discord 用户名 (如 @verrdant, @lemurkin)
     /^@[a-zA-Z0-9_]+$/,
-    // 排除 1/ 稀有度长数字
-    /^1\/[\d,]+ With/,
     // 排除游戏逻辑关键判断字符串 (textContent === 比较)
     /^Enter a name!$/,
     /^Confirm!$/,
