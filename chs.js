@@ -238,6 +238,25 @@ var cnItems = {
     "Active for {{0}}": "活跃中：{{0}}",
     "Gen {{0}} Blocks.": "生成 {{0}} 方块。",
     "Cant Gen: Paradoxical Active!": "无法生成：悖论活跃中！",
+    
+    // ======================== 统计面板模板 ========================
+    "{{0}} Time Played.": "{{0}} 总时长。",
+    "{{0}} Session Time.": "{{0}} 本次时长。",
+    "{{0}} Caves Generated.": "{{0}} 已生成洞穴。",
+    "{{0}} Session Resets.": "{{0}} 本次重置。",
+    "{{0}} Total Resets.": "{{0}} 总重置。",
+    "{{0}} Furthest X.": "{{0}} 最远 X。",
+    "{{0}} Furthest -X.": "{{0}} 最远 -X。",
+    "{{0}} Session Mined.": "{{0}} 本次挖掘。",
+    "Variant Statistics For: {{0}}": "变体统计：{{0}}",
+    "Normal Amount: {{0}}": "普通数量：{{0}}",
+    "Electrified Amount: {{0}}": "电击数量：{{0}}",
+    "Radioactive Amount: {{0}}": "辐射数量：{{0}}",
+    "Explosive Amount: {{0}}": "爆炸数量：{{0}}",
+    "Completion Progress: {{0}}": "完成进度：{{0}}",
+    "Minimum Spawn Message Tier: {{0}}+": "最低生成信息等级：{{0}}+",
+    "{{0}} Furthest Y.": "{{0}} 最深 Y。",
+    "-{{0}} Furthest Y.": "-{{0}} 最深 Y。",
     "Cant Gen: Wrong Pickaxe!": "无法生成：镐子不对！",
     "{{0}}x Boost, {{1}} Duration": "{{0}}x 增强，持续 {{1}}",
     "{{0}}x Boost, {{1}} Time": "{{0}}x 增强，{{1}} 时间",
@@ -1535,5 +1554,11 @@ var cnExcludeWhole = [
     // 排除游戏逻辑关键判断字符串 (textContent === 比较)
     /^Enter a name!$/,
     /^Confirm!$/,
+    // 排除稀有度等级名（作为按钮数据键使用，翻译会导致查询失败）
+    /^Antique$/, /^Mystical$/, /^Divine$/, /^Flawless$/,
+    /^Interstellar$/, /^Metaversal$/, /^Sacred$/, /^Ethereal$/,
+    /^Imaginary$/, /^Celestial$/, /^Hyperdimensional$/, /^Infinitesimal$/,
+    /^Polychromatical$/, /^Layer$/, /^Common$/, /^Uncommon$/, /^Rare$/,
+    /^Legendary$/, /^Godly$/,
 ];
 var cnExcludePostfix = [];
