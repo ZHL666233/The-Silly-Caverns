@@ -652,26 +652,9 @@ function TransSubTextNode(node) {
     });
     observer.observe(targetNode, observer_config);
     }
-    // 等待游戏初始化完成后再启动汉化观察器
-    function gameReady() {
-        try {
-            var inv = document.getElementById('inventory');
-            if (inv && inv.children.length > 0) return true;
-            var mine = document.getElementById('blockDisplay');
-            if (mine && mine.style.display !== 'none') return true;
-        } catch(e) {}
-        return false;
-    }
-    if (gameReady()) {
-        startObserver();
-    } else {
-        var checkAttempts = 0;
-        var checkInterval = setInterval(function() {
-            checkAttempts++;
-            if (gameReady() || checkAttempts > 300) {
-                clearInterval(checkInterval);
-                startObserver();
-            }
-        }, 200);
-    }
+    // 初始静态扫描（一次性，不启动 MutationObserver 避免干扰游戏逻辑）
+    var targetNode = document.body;
+    TransSubTextNode(targetNode);
+    transTaskMgr.doTask();
+    console.log("汉化模块已加载 - 静态扫描完成");
 }();
