@@ -1067,7 +1067,7 @@ function allowList(tier) {
     if (removing) player.settings.stopOnRare.allowList.splice(currentList.indexOf(tier), 1);
     else (player.settings.stopOnRare.allowList.push(tier));
     const elementsToSearch = document.getElementsByClassName("stopOnRareTier");
-    for (let i = 0; i < elementsToSearch.length; i++) if (elementsToSearch[i].textContent === tier) elementsToSearch[i].style.color = (removing ? "#FF3D3D" : "#6BC267");
+    for (let i = 0; i < elementsToSearch.length; i++) if (elementsToSearch[i].getAttribute('data-tier') === tier) elementsToSearch[i].style.color = (removing ? "#FF3D3D" : "#6BC267");
 }
 function toggleSpawnMessageList() {
     const element = get("spawnTierList");
@@ -1088,7 +1088,7 @@ function allowMessage(tier) {
     if (removing) player.settings.spawnMessageTiers.splice(currentList.indexOf(tier), 1);
     else (player.settings.spawnMessageTiers.push(tier));
     const elementsToSearch = document.getElementsByClassName("spawnMessageTier");
-    for (let i = 0; i < elementsToSearch.length; i++) if (elementsToSearch[i].textContent === tier) elementsToSearch[i].style.color = (removing ? "#FF3D3D" : "#6BC267");
+    for (let i = 0; i < elementsToSearch.length; i++) if (elementsToSearch[i].getAttribute('data-tier') === tier) elementsToSearch[i].style.color = (removing ? "#FF3D3D" : "#6BC267");
 }
 const portalLocations = {
     1: {

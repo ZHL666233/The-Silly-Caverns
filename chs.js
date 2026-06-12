@@ -1554,11 +1554,6 @@ var cnExcludeWhole = [
     // 排除游戏逻辑关键判断字符串 (textContent === 比较)
     /^Enter a name!$/,
     /^Confirm!$/,
-    // 排除稀有度等级名（作为按钮数据键使用，翻译会导致查询失败）
-    /^Antique$/, /^Mystical$/, /^Divine$/, /^Flawless$/,
-    /^Interstellar$/, /^Metaversal$/, /^Sacred$/, /^Ethereal$/,
-    /^Imaginary$/, /^Celestial$/, /^Hyperdimensional$/, /^Infinitesimal$/,
-    /^Polychromatical$/, /^Layer$/, /^Common$/, /^Uncommon$/, /^Rare$/,
-    /^Legendary$/, /^Godly$/,
+
 ];
 var cnExcludePostfix = [];

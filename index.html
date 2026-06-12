@@ -60,38 +60,38 @@
                     <button class="stopOnRareSelector" onclick="toggleStopRareList()" id="stopOnRareDisplay">Show Tiers</button>
                     <div id="stopOnRareList" style="display: none;">
                         <span class="stopOnRareTierDivider"></span>
-                        <span class="stopOnRareTier" onclick="allowList(this.textContent)">Antique</span>
-                        <span class="stopOnRareTier" onclick="allowList(this.textContent)">Mystical</span>
-                        <span class="stopOnRareTier" onclick="allowList(this.textContent)">Divine</span>
-                        <span class="stopOnRareTier" onclick="allowList(this.textContent)">Flawless</span>
-                        <span class="stopOnRareTier" onclick="allowList(this.textContent)">Interstellar</span>
-                        <span class="stopOnRareTier" onclick="allowList(this.textContent)">Metaversal</span>
-                        <span class="stopOnRareTier" onclick="allowList(this.textContent)">Sacred</span>
-                        <span class="stopOnRareTier" onclick="allowList(this.textContent)">Ethereal</span>
-                        <span class="stopOnRareTier" onclick="allowList(this.textContent)">Imaginary</span>
-                        <span class="stopOnRareTier" onclick="allowList(this.textContent)">Celestial</span>
-                        <span class="stopOnRareTier" onclick="allowList(this.textContent)">Hyperdimensional</span>
-                        <span class="stopOnRareTier" onclick="allowList(this.textContent)">Infinitesimal</span>
-                        <span class="stopOnRareTier" onclick="allowList(this.textContent)">Polychromatical</span>
+                        <span class="stopOnRareTier" data-tier="Antique" onclick="allowList(this.getAttribute('data-tier'))">Antique</span>
+                        <span class="stopOnRareTier" data-tier="Mystical" onclick="allowList(this.getAttribute('data-tier'))">Mystical</span>
+                        <span class="stopOnRareTier" data-tier="Divine" onclick="allowList(this.getAttribute('data-tier'))">Divine</span>
+                        <span class="stopOnRareTier" data-tier="Flawless" onclick="allowList(this.getAttribute('data-tier'))">Flawless</span>
+                        <span class="stopOnRareTier" data-tier="Interstellar" onclick="allowList(this.getAttribute('data-tier'))">Interstellar</span>
+                        <span class="stopOnRareTier" data-tier="Metaversal" onclick="allowList(this.getAttribute('data-tier'))">Metaversal</span>
+                        <span class="stopOnRareTier" data-tier="Sacred" onclick="allowList(this.getAttribute('data-tier'))">Sacred</span>
+                        <span class="stopOnRareTier" data-tier="Ethereal" onclick="allowList(this.getAttribute('data-tier'))">Ethereal</span>
+                        <span class="stopOnRareTier" data-tier="Imaginary" onclick="allowList(this.getAttribute('data-tier'))">Imaginary</span>
+                        <span class="stopOnRareTier" data-tier="Celestial" onclick="allowList(this.getAttribute('data-tier'))">Celestial</span>
+                        <span class="stopOnRareTier" data-tier="Hyperdimensional" onclick="allowList(this.getAttribute('data-tier'))">Hyperdimensional</span>
+                        <span class="stopOnRareTier" data-tier="Infinitesimal" onclick="allowList(this.getAttribute('data-tier'))">Infinitesimal</span>
+                        <span class="stopOnRareTier" data-tier="Polychromatical" onclick="allowList(this.getAttribute('data-tier'))">Polychromatical</span>
                     </div>
                   </div>
                   <div class="inputAndButton" id="spawnMessageHolder">
                     <button class="gameSetting" onclick="toggleSpawnMessageList()" id="changeSMrarityDisplay">Show Spawn Message Tiers</button>
                     <div id="spawnTierList" style="display: none;">
                         <span class="spawnMessageTierDivider"></span>
-                        <span class="spawnMessageTier" onclick="allowMessage(this.textContent)">Antique</span>
-                        <span class="spawnMessageTier" onclick="allowMessage(this.textContent)">Mystical</span>
-                        <span class="spawnMessageTier" onclick="allowMessage(this.textContent)">Divine</span>
-                        <span class="spawnMessageTier" onclick="allowMessage(this.textContent)">Flawless</span>
-                        <span class="spawnMessageTier" onclick="allowMessage(this.textContent)">Interstellar</span>
-                        <span class="spawnMessageTier" onclick="allowMessage(this.textContent)">Metaversal</span>
-                        <span class="spawnMessageTier" onclick="allowMessage(this.textContent)">Sacred</span>
-                        <span class="spawnMessageTier" onclick="allowMessage(this.textContent)">Ethereal</span>
-                        <span class="spawnMessageTier" onclick="allowMessage(this.textContent)">Imaginary</span>
-                        <span class="spawnMessageTier" onclick="allowMessage(this.textContent)">Celestial</span>
-                        <span class="spawnMessageTier" onclick="allowMessage(this.textContent)">Hyperdimensional</span>
-                        <span class="spawnMessageTier" onclick="allowMessage(this.textContent)">Infinitesimal</span>
-                        <span class="spawnMessageTier" onclick="allowMessage(this.textContent)">Polychromatical</span>
+                        <span class="spawnMessageTier" data-tier="Antique" onclick="allowMessage(this.getAttribute('data-tier'))">Antique</span>
+                        <span class="spawnMessageTier" data-tier="Mystical" onclick="allowMessage(this.getAttribute('data-tier'))">Mystical</span>
+                        <span class="spawnMessageTier" data-tier="Divine" onclick="allowMessage(this.getAttribute('data-tier'))">Divine</span>
+                        <span class="spawnMessageTier" data-tier="Flawless" onclick="allowMessage(this.getAttribute('data-tier'))">Flawless</span>
+                        <span class="spawnMessageTier" data-tier="Interstellar" onclick="allowMessage(this.getAttribute('data-tier'))">Interstellar</span>
+                        <span class="spawnMessageTier" data-tier="Metaversal" onclick="allowMessage(this.getAttribute('data-tier'))">Metaversal</span>
+                        <span class="spawnMessageTier" data-tier="Sacred" onclick="allowMessage(this.getAttribute('data-tier'))">Sacred</span>
+                        <span class="spawnMessageTier" data-tier="Ethereal" onclick="allowMessage(this.getAttribute('data-tier'))">Ethereal</span>
+                        <span class="spawnMessageTier" data-tier="Imaginary" onclick="allowMessage(this.getAttribute('data-tier'))">Imaginary</span>
+                        <span class="spawnMessageTier" data-tier="Celestial" onclick="allowMessage(this.getAttribute('data-tier'))">Celestial</span>
+                        <span class="spawnMessageTier" data-tier="Hyperdimensional" onclick="allowMessage(this.getAttribute('data-tier'))">Hyperdimensional</span>
+                        <span class="spawnMessageTier" data-tier="Infinitesimal" onclick="allowMessage(this.getAttribute('data-tier'))">Infinitesimal</span>
+                        <span class="spawnMessageTier" data-tier="Polychromatical" onclick="allowMessage(this.getAttribute('data-tier'))">Polychromatical</span>
                     </div>
                 </div>
                   <div class="inputAndButton">
@@ -316,16 +316,16 @@
             <div id="loungeOverallStatistics" style="display: none;">
                 <div id="statisticsHolder">
                     <div id="tierStatSelectors">
-                        <button class="tierSelector" style="background-color: #31E8FF;" onclick="showTierStats(this.textContent)">Flawless</button>
-                        <button class="tierSelector" style="background-color: #FF8041;" onclick="showTierStats(this.textContent)">Interstellar</button>
-                        <button class="tierSelector" style="background-color: #3BD216;" onclick="showTierStats(this.textContent)">Metaversal</button>
-                        <button class="tierSelector" style="background-color: #FF3C3C;" onclick="showTierStats(this.textContent)">Sacred</button>
-                        <button class="tierSelector" style="background-color: #AC47FF;" onclick="showTierStats(this.textContent)">Ethereal</button>
-                        <button class="tierSelector" style="background-color: #41FF6D;" onclick="showTierStats(this.textContent)">Imaginary</button>
-                        <button class="tierSelector" style="background-color: #041407;" onclick="showTierStats(this.textContent)">Hyperdimensional</button>
-                        <button class="tierSelector" style="background-color: #FF0526;" onclick="showTierStats(this.textContent)">Polychromatical</button>
-                        <button class="tierSelector" style="background-color: #6C0000;" onclick="showTierStats(this.textContent)">Celestial</button>
-                        <button class="tierSelector" style="background-color: #021752;" onclick="showTierStats(this.textContent)">Infinitesimal</button>
+                        <button class="tierSelector" style="background-color: #31E8FF;" data-tier="Flawless" onclick="showTierStats(this.dataset.tier)">Flawless</button>
+                        <button class="tierSelector" style="background-color: #FF8041;" data-tier="Interstellar" onclick="showTierStats(this.dataset.tier)">Interstellar</button>
+                        <button class="tierSelector" style="background-color: #3BD216;" data-tier="Metaversal" onclick="showTierStats(this.dataset.tier)">Metaversal</button>
+                        <button class="tierSelector" style="background-color: #FF3C3C;" data-tier="Sacred" onclick="showTierStats(this.dataset.tier)">Sacred</button>
+                        <button class="tierSelector" style="background-color: #AC47FF;" data-tier="Ethereal" onclick="showTierStats(this.dataset.tier)">Ethereal</button>
+                        <button class="tierSelector" style="background-color: #41FF6D;" data-tier="Imaginary" onclick="showTierStats(this.dataset.tier)">Imaginary</button>
+                        <button class="tierSelector" style="background-color: #041407;" data-tier="Hyperdimensional" onclick="showTierStats(this.dataset.tier)">Hyperdimensional</button>
+                        <button class="tierSelector" style="background-color: #FF0526;" data-tier="Polychromatical" onclick="showTierStats(this.dataset.tier)">Polychromatical</button>
+                        <button class="tierSelector" style="background-color: #6C0000;" data-tier="Celestial" onclick="showTierStats(this.dataset.tier)">Celestial</button>
+                        <button class="tierSelector" style="background-color: #021752;" data-tier="Infinitesimal" onclick="showTierStats(this.dataset.tier)">Infinitesimal</button>
                         <button class="tierSelector" onclick="updateTimes()">Player Stats</button>
                     </div>
                     <div id="tierStatsHolder" style="display: none;">

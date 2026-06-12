@@ -913,7 +913,7 @@ beSilly = {
 function applyStopOnRareData() {
     const elementList = document.getElementsByClassName("stopOnRareTier");
     for (let i = 0; i < elementList.length; i++) {
-        const tier = elementList[i].textContent;
+        const tier = elementList[i].getAttribute('data-tier');
         elementList[i].style.backgroundColor = oreInformation.getColors(tier)["backgroundColor"];
         if (stopIncluded(tier)) elementList[i].style.color = "#6BC267";
         else elementList[i].style.color = "#FF3D3D";
@@ -927,7 +927,7 @@ function stopIncluded(tier) {
 function applySpawnMessageData() {
     const elementList = document.getElementsByClassName("spawnMessageTier");
     for (let i = 0; i < elementList.length; i++) {
-        const tier = elementList[i].textContent;
+        const tier = elementList[i].getAttribute('data-tier');
         elementList[i].style.backgroundColor = oreInformation.getColors(tier)["backgroundColor"];
         if (messageIncluded(tier)) elementList[i].style.color = "#6BC267";
         else elementList[i].style.color = "#FF3D3D";
