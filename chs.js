@@ -216,6 +216,8 @@ var cnItems = {
     "{{0}}/{{1}} Speed": "{{0}}/{{1}} 速度",
     "Ore Spawn Count: {{0}}": "矿石生成数：{{0}}",
     "Last Ore Spawned: {{0}}": "最后生成矿石：{{0}}",
+    "{{0}} Has Spawned!": "{{0}} 已生成！",
+    "{{0}} Has Spawned..?": "{{0}} 已生成……？",
     "Current Event: {{0}}": "当前事件：{{0}}",
     "{{0}} Generations/Min": "{{0}} 生成/分钟",
     "Level {{0}}": "等级 {{0}}","Tier: {{0}}": "等级：{{0}}",
