@@ -570,7 +570,7 @@ function createIndexCards(layer) {
         }
         let e = document.querySelector(".indexCardTier").children[0];
         e.style.color = oreInformation.getColors(tier)["backgroundColor"];
-        e.innerHTML = e.innerHTML.replace("Polychromatical", tier);
+        e.textContent = tier;
         const f = playerInventory[ore]["foundAt"];
         document.querySelector(".indexCardFound").textContent = `${hide || (indexHasOre(ore) === 0 && f === undefined) ? "Never Found!" : (f === undefined ? "No Date Detected!" : new Date(f).toUTCString())}`;
         if (caveList[layer] !== undefined) {

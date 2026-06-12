@@ -528,7 +528,7 @@ function cnItem(text, node) {
             return _transCache[textori] = text_prefix + text + text_reg_exclude_postfix + text_postfix;
         }
     }
-    if (cnItems._OTHER_.length < 10000) {
+    if (cnItems._OTHER_.length < 10000 && save_text.length > 3) {
         cnItems._OTHER_.push(save_text);
         cnItems._OTHER_.sort();
     }

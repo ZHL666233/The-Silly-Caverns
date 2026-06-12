@@ -1514,6 +1514,35 @@ var cnItems = {
     "Pickaxe Name": "镐子名称",
     "Icon made by {{0}}!": "图标制作者：{{0}}！",
 
+    "All gears work here!": "所有齿轮在此生效！",
+    "All pickaxes work here!": "所有镐子在此生效！",
+    "Where the sillies all began...": "一切愚蠢开始的地方……",
+    "Unlock Requirement: None!": "解锁条件：无！",
+    "Galactica and watr pickaxes work here!": "银河和水水镐子在此生效！",
+    "The Second Silly Caverns World!": "第二愚蠢洞穴世界！",
+    "Unlock Requirement: The Key!": "解锁条件：钥匙！",
+    "Unlock Requirement: 1 Flawless Tier Ore!": "解锁条件：1 个无瑕级矿石！",
+    "The Endgame World!": "终局世界！",
+    "Undersea Eviscerator works here!": "海底开膛手在此生效！",
+    "Unlock Requirement: Omnipotent God of The Mine!": "解锁条件：全能矿之神！",
+    "Null Chroma, Galactica Pickaxes work here!": "Null Chroma、银河镐子在此生效！",
+    "Unlock Requirement: Visit Watr Once!": "解锁条件：访问一次水水！",
+    "watr watr!": "水水！",
+    "Silly Caverns Anniversary": "愚蠢洞穴周年庆",
+    "The event world for the silly caverns anniversary.": "愚蠢洞穴周年庆的活动世界。",
+    "Emojify!": "表情化！",
+    "Go to options": "前往设置",
+    "Read help": "阅读帮助",
+    "View original": "查看原版",
+    "Size adj:": "大小调整：",
+    "Login Here.": "点此登录。",
+    "{{0}} Blocks Mined.": "已挖 {{0}} 方块。",
+    "   Fluent Emoji Mono": "   Fluent Emoji Mono",
+    "   Noto Emoji Mono": "   Noto Emoji Mono",
+    "   OpenMoji Black": "   OpenMoji Black",
+    "   OpenSans+Noto": "   OpenSans+Noto",
+    "Mines a 100x100 area around the player, the size growing the more blocks mined you have. Has a cooldown of 15 minutes.": "挖掘玩家周围100x100区域，已挖方块越多范围越大。冷却时间15分钟。",
+
     "":""
 };
 
@@ -1554,6 +1583,21 @@ var cnExcludeWhole = [
     // 排除游戏逻辑关键判断字符串 (textContent === 比较)
     /^Enter a name!$/,
     /^Confirm!$/,
+    // 排除 typewriter 逐字显示产生的碎片
+    /^.$/, /^..$/, /^...$/,
+    // 排除数值前缀 (x1, x2, x15, x182...)
+    /^x[\d,]+$/,
+    // 排除纯时间格式
+    /^Duration: \d/,
+    /^\d{2}:\d{2}:\d{2}$/,
+    /^Ore boost: x/,
+    /^Side effect: /,
+    // 排除日期格式
+    /^\w{3}, \d{1,2} \w{3} \d{4}/,
+    // 排除动态拼接的 Remaining 字符串
+    /^Remaining:.*/,
+    // 排除 "- Remsy" 引用片段
+    /^".*" - Remsy$/,
 
 ];
 var cnExcludePostfix = [];
