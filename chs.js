@@ -1428,7 +1428,10 @@ var cnExcludeWhole = [
     /^[\d.]+[kMBTq]$/,
     // 排除 Discord 用户名 (如 @verrdant, @lemurkin)
     /^@[a-zA-Z0-9_]+$/,
-    // 排除 1/ 稀有度长数字 (如 1/1,000,000,000,000,000,000 With Luck)
+    // 排除 1/ 稀有度长数字
     /^1\/[\d,]+ With/,
+    // 排除游戏逻辑关键判断字符串 (textContent === 比较)
+    /^Enter a name!$/,
+    /^Confirm!$/,
 ];
 var cnExcludePostfix = [];
