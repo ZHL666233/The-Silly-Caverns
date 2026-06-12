@@ -620,7 +620,6 @@ function TransSubTextNode(node) {
     rebuildIndices();
     console.log("汉化模块已加载 - 等待游戏就绪后汉化");
     
-    // 每 500ms 检测游戏是否初始化完成，就绪后执行一次静态扫描
     var attempts = 0;
     var check = setInterval(function() {
         attempts++;
@@ -636,9 +635,37 @@ function TransSubTextNode(node) {
         
         if (ready || attempts > 60) {
             clearInterval(check);
+            // 首次静态扫描
             TransSubTextNode(document.body);
             transTaskMgr.doTask();
-            console.log("汉化扫描完成 (尝试次数: " + attempts + ")");
+            console.log("汉化扫描完成，启动动态监听");
+            
+            // 启动 MutationObserver 处理后续动态文本
+            var observer_config = { attributes: false, characterData: true, childList: true, subtree: true };
+            var observer = new MutationObserver(function(mutations) {
+                observer.disconnect();
+                for (var i = 0; i < mutations.length; i++) {
+                    var m = mutations[i];
+                    if (m.target.nodeName === "SCRIPT" || m.target.nodeName === "STYLE" || m.target.nodeName === "TEXTAREA") continue;
+                    if (m.type === "characterData" && m.target.nodeName === "#text") {
+                        var t = cnItem(m.target.textContent, m.target);
+                        if (t !== m.target.textContent) m.target.textContent = t;
+                    } else if (m.type === "childList" && m.addedNodes.length) {
+                        for (var j = 0; j < m.addedNodes.length; j++) {
+                            var node = m.addedNodes[j];
+                            if (node.nodeName === "#text") {
+                                var t2 = cnItem(node.textContent, node);
+                                if (t2 !== node.textContent) node.textContent = t2;
+                            } else if (node.nodeName !== "SCRIPT" && node.nodeName !== "STYLE" && node.nodeName !== "TEXTAREA") {
+                                TransSubTextNode(node);
+                            }
+                        }
+                    }
+                }
+                transTaskMgr.doTask();
+                observer.observe(document.body, observer_config);
+            });
+            observer.observe(document.body, observer_config);
         }
     }, 500);
 }();
