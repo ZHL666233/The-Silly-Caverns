@@ -618,43 +618,5 @@ function TransSubTextNode(node) {
 
 !function() {
     rebuildIndices();
-    console.log("加载汉化模块 (高性能稳定版 V0.8.2) - 支持自动分类匹配 (数组定义)");
-    // 延迟初始化，等待游戏加载完成后再启动
-    function startObserver() {
-        let observer_config = { attributes: false, characterData: true, childList: true, subtree: true };
-        let targetNode = document.body;
-        TransSubTextNode(targetNode);
-        transTaskMgr.doTask();
-        let observer = new MutationObserver(function(e) {
-        observer.disconnect();
-        for (let mutation of e) {
-            if (mutation.target.nodeName === "SCRIPT"|| mutation.target.nodeName === "STYLE" || mutation.target.nodeName === "TEXTAREA") continue;
-            if (mutation.target.nodeName === "#text") {
-                mutation.target.textContent = cnItem(mutation.target.textContent, mutation.target);
-            } else if (!mutation.target.childNodes || !mutation.target.childNodes.length) {
-                if (mutation.target.innerText) mutation.target.innerText = cnItem(mutation.target.innerText, mutation.target);
-            } else if (mutation.addedNodes.length) {
-                for (let node of mutation.addedNodes) {
-                    if (node.nodeName === "#text") {
-                        node.textContent = cnItem(node.textContent, node);
-                    } else if (node.nodeName !== "SCRIPT" && node.nodeName !== "STYLE" && node.nodeName !== "TEXTAREA") {
-                        if (!node.childNodes || !node.childNodes.length) {
-                            if (node.innerText) node.innerText = cnItem(node.innerText, node);
-                        } else {
-                            TransSubTextNode(node);
-                        }
-                    }
-                }
-            }
-        }
-        transTaskMgr.doTask();
-        observer.observe(targetNode, observer_config);
-    });
-    observer.observe(targetNode, observer_config);
-    }
-    // 初始静态扫描（一次性，不启动 MutationObserver 避免干扰游戏逻辑）
-    var targetNode = document.body;
-    TransSubTextNode(targetNode);
-    transTaskMgr.doTask();
-    console.log("汉化模块已加载 - 静态扫描完成");
+    console.log("汉化模块已加载 (调试模式 - 不操作DOM)");
 }();
