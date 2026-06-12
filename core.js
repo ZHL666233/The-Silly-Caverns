@@ -619,11 +619,13 @@ function TransSubTextNode(node) {
 !function() {
     rebuildIndices();
     console.log("加载汉化模块 (高性能稳定版 V0.8.2) - 支持自动分类匹配 (数组定义)");
-    let observer_config = { attributes: false, characterData: true, childList: true, subtree: true };
-    let targetNode = document.body;
-    TransSubTextNode(targetNode);
-    transTaskMgr.doTask();
-    let observer = new MutationObserver(function(e) {
+    // 延迟初始化，等待游戏加载完成后再启动
+    function startObserver() {
+        let observer_config = { attributes: false, characterData: true, childList: true, subtree: true };
+        let targetNode = document.body;
+        TransSubTextNode(targetNode);
+        transTaskMgr.doTask();
+        let observer = new MutationObserver(function(e) {
         observer.disconnect();
         for (let mutation of e) {
             if (mutation.target.nodeName === "SCRIPT"|| mutation.target.nodeName === "STYLE" || mutation.target.nodeName === "TEXTAREA") continue;
@@ -649,4 +651,27 @@ function TransSubTextNode(node) {
         observer.observe(targetNode, observer_config);
     });
     observer.observe(targetNode, observer_config);
+    }
+    // 等待游戏初始化完成后再启动汉化观察器
+    function gameReady() {
+        try {
+            var inv = document.getElementById('inventory');
+            if (inv && inv.children.length > 0) return true;
+            var mine = document.getElementById('blockDisplay');
+            if (mine && mine.style.display !== 'none') return true;
+        } catch(e) {}
+        return false;
+    }
+    if (gameReady()) {
+        startObserver();
+    } else {
+        var checkAttempts = 0;
+        var checkInterval = setInterval(function() {
+            checkAttempts++;
+            if (gameReady() || checkAttempts > 300) {
+                clearInterval(checkInterval);
+                startObserver();
+            }
+        }, 200);
+    }
 }();
