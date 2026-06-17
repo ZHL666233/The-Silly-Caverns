@@ -299,11 +299,13 @@ function movePlayer(dir, reps, type) {
     for (let i = 0; i < reps; i++) {
         if (canMine) {
             if (verifiedOres.isRightPickaxe()) {
+                if (dir.y == null || dir.x == null) return;
                 if (dir.y < 0 && !(curY > 0)) {
                     return;
                 } else if (dir.x < 0 && !(curX > 0)) {
                     return;
                 }
+                if (mine[curY + dir.y] === undefined) return;
                 let block = mine[curY + dir.y][curX + dir.x];
                 block = block.ore === undefined ? block : block.ore;
                 if (!unbreakable.includes(block)) { 
