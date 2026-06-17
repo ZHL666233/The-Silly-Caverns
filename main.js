@@ -102,26 +102,11 @@ function init() {
     canMine = false;
     if (canContinue) {
         finishInit();
-        fetch("http://0.0.0.0", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: new URLSearchParams({
-                "func" : "seed",
-            }).toString()
-          })
-          .then((res) => res.text())
-          .then((text => {
-                gameInfo.count = 0;
-                gameInfo.overallCount = 0;
-                gameInfo.loops = 0;
-                gameInfo.seed = JSON.parse(text);
-                rand = new Math.seedrandom(gameInfo.seed + String(gameInfo.loops));
-          }))
-          .catch((err) => {
-            console.log("Failed To Generate Seed!")
-          });
+        gameInfo.count = 0;
+        gameInfo.overallCount = 0;
+        gameInfo.loops = 0;
+        gameInfo.seed = String(Date.now()) + Math.random().toString(36).slice(2);
+        rand = new Math.seedrandom(gameInfo.seed + String(gameInfo.loops));
     }
 		if(!cloudsaving.ongalaxy){
 			get('displayCloudIcon').style.backgroundColor = "#a51010"
@@ -499,9 +484,9 @@ function goDirection(direction) {
             inSec += nums.extra;
             loopTimer = setInterval(accurateMove, 10, inSec, movements);
         } else {
-            loopTimer = setInterval(movePlayer, miningSpeed, movements, reps, "auto");
+            loopTimer = setInterval(() => { movePlayer(movements, reps, "auto"); }, miningSpeed);
             if (nums.extra > 0) {
-                secondaryTimer = setInterval(movePlayer, (Math.ceil(1000/nums.extra)), movements, 1, "auto");
+                secondaryTimer = setInterval(() => { movePlayer(movements, 1, "auto"); }, Math.ceil(1000/nums.extra));
             }
         }
         curDirection = direction;
