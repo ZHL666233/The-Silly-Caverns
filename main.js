@@ -305,7 +305,7 @@ function movePlayer(dir, reps, type) {
                 } else if (dir.x < 0 && !(curX > 0)) {
                     return;
                 }
-                if (mine[curY + dir.y] === undefined) return;
+                if (mine[curY + dir.y] === undefined) mine[curY + dir.y] = [];
                 let block = mine[curY + dir.y][curX + dir.x];
                 block = block.ore === undefined ? block : block.ore;
                 if (!unbreakable.includes(block)) { 
