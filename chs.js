@@ -134,7 +134,7 @@ var cnItems = {
     "Current Message: N/A": "当前信息：无","Current Message: Ore Spawn": "当前信息：矿石生成",
     "Current Message: Event Message": "当前信息：事件信息","Current Message: ?????": "当前信息：？？？？？",
     "All Messages Appear Here!": "所有信息显示在这里！",
-    "MINED: FALSE": "已挖：否","MINED: TRUE": "已挖：是",
+    "MINED: FALSE": "已挖：否","MINED: TRUE": "已挖：是","MINED: VOIDED": "已挖：作废",
     "Powerups": "强化","Allow Auto?": "允许自动？",
     "Name!": "名称！","Activate!": "激活！","Not Active!": "未激活！","Not Active": "未激活",
     "Event Manager!": "事件管理器！","Replace Event!": "替换事件！",
@@ -1542,6 +1542,22 @@ var cnItems = {
     "   OpenMoji Black": "   OpenMoji Black",
     "   OpenSans+Noto": "   OpenSans+Noto",
     "Mines a 100x100 area around the player, the size growing the more blocks mined you have. Has a cooldown of 15 minutes.": "挖掘玩家周围100x100区域，已挖方块越多范围越大。冷却时间15分钟。",
+    "Mines a {{0}} area around the player, the size growing the more blocks mined you have. Has a cooldown of 15 minutes.": "挖掘玩家周围{{0}}区域，已挖方块越多范围越大。冷却时间15分钟。",
+    "Multiplies base luck by 1.5x": "基础幸运乘以 1.5x",
+    "10% Chance for +500,000 Simulated Ability Amount": "10% 几率 +500,000 模拟能力量",
+    "Uncapped +0.01x luck for every Hyperdimensional Tier ore owned": "每拥有一个超维矿石 +0.01x 幸运",
+    "Allows use of Wormhole Exterminator in Subrealm 1": "允许在子领域一使用虫洞灭绝者",
+    "+50 Movement Repetitions": "+50 移动重复",
+    "Uncapped Luck * (Session time in minutes * 0.01) +1": "无上限幸运*(会话分钟数*0.01)+1",
+    "Gives a random buff that changes every minute.": "每分钟变换的随机增益。",
+    "Where my life began...": "我生命开始的地方……",
+    "Am I smart enough to be here...": "我够聪明待在这里吗……",
+    "I hear strange music...": "我听到奇怪的音乐……",
+    "I shouldn't be here...": "我不应该在这里……",
+    "This place birthed the stars in the sky...": "这里孕育了天空的星辰……",
+    "It's so hot here...": "这里好热……",
+    "Changes made from this popup are temporary and only affect the current tab. ": "此弹窗更改仅影响当前标签页。",
+    "..This is where it ends? The most powerful tool in all the worlds..? No.. it can't end here there must be something more...": "……这就是终点？所有世界中最强的工具……？不……不能在此结束，一定还有更多……",
 
     "":""
 };
@@ -1598,6 +1614,20 @@ var cnExcludeWhole = [
     /^Remaining:.*/,
     // 排除 "- Remsy" 引用片段
     /^".*" - Remsy$/,
+    // 排除动态倍率 (x1.00, x106.54M, x110.9M...)
+    /^x[\d.]+[kMBT]?$/,
+    // 排除稀有度 (1/1M BASE, 1/750k BASE...)
+    /^1\/[\d.]+[kMBT]? BASE$/,
+    // 排除完成进度 (100% at 22/22...)
+    /^\d+% at \d+\/\d+$/,
+    // 排除进度分数 (111,000,000/25T...)
+    /^[\d,]+\/[\d.]+[kMBT]?$/,
+    // 排除深度指示 (🎂 ????m, 🟩 ????m...)
+    /^. \?\?\?\?m$/,
+    // 排除 Mining In 动态文本
+    /^Mining In: ./,
+    // 排除 x1.00 等
+    /^x[\d.]+$/,
 
 ];
 var cnExcludePostfix = [];
