@@ -1558,6 +1558,13 @@ var cnItems = {
     "It's so hot here...": "这里好热……",
     "Changes made from this popup are temporary and only affect the current tab. ": "此弹窗更改仅影响当前标签页。",
     "..This is where it ends? The most powerful tool in all the worlds..? No.. it can't end here there must be something more...": "……这就是终点？所有世界中最强的工具……？不……不能在此结束，一定还有更多……",
+    "Stacks with all other luck additions.": "与所有其他幸运加成叠加。",
+    "Stacks with all other speed buffs.": "与所有其他速度加成叠加。",
+    "-3ms Mining Speed.": "-3ms 挖掘速度。",
+    "-5ms Mining Speed.": "-5ms 挖掘速度。",
+    "-8ms Mining Speed and each movement with automine gains +10 blocks moved.": "-8ms 挖掘速度，自动挖掘每次移动 +10 方块。",
+    "Choices: 1.4x Luck, 2x Proc Rate, +25 Movement Repetitions": "选项：1.4x幸运、2x触发率、+25移动重复",
+    "1.75x Movement repetitions (rounded up)": "1.75x 移动重复（向上取整）",
 
     "":""
 };
