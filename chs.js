@@ -1568,6 +1568,16 @@ var cnItems = {
     "FAILED TO FETCH NAMES": "名称加载失败",
     "No Ability Found": "未找到能力",
     "No Icon Found": "未找到图标",
+    "turn the shower off...": "把淋浴关掉……",
+    "oh wow 🔥🔥🔥...": "哇哦 🔥🔥🔥……",
+    ":trol:": ":trol:",
+    "IN̷V̷ALI̷D̷A̷TED̷...": "已̷失̷效̷……",
+    "For every block mined, gives you an additional layer block from the current layer.": "每挖一个方块，从当前地层给你一个额外的地层方块。",
+    "Can duplicate layer blocks.": "可以复制地层方块。",
+    "Silly TP": "愚蠢传送",
+    "Fantastical Feather": "奇幻羽毛",
+    "Statistical Analyzer": "统计分析器",
+    "The tentacles asked him \"what do you want to be?\" and he answered \"I want to be weak.\" He is now here to teach you the truth of the mines.": "触手问他\"你想成为什么？\"他回答\"我想变得弱小。\"他现在在这里教你矿洞的真相。",
 
     "":""
 };
