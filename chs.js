@@ -1565,6 +1565,9 @@ var cnItems = {
     "-8ms Mining Speed and each movement with automine gains +10 blocks moved.": "-8ms 挖掘速度，自动挖掘每次移动 +10 方块。",
     "Choices: 1.4x Luck, 2x Proc Rate, +25 Movement Repetitions": "选项：1.4x幸运、2x触发率、+25移动重复",
     "1.75x Movement repetitions (rounded up)": "1.75x 移动重复（向上取整）",
+    "FAILED TO FETCH NAMES": "名称加载失败",
+    "No Ability Found": "未找到能力",
+    "No Icon Found": "未找到图标",
 
     "":""
 };
